@@ -1381,7 +1381,7 @@ textarea {
 
 .profile-header {
   position: relative;
-  background: url("https://images.unsplash.com/photo-1522202195461-9e0f3bda4b54") center/cover no-repeat;
+  /* background: url("https://images.unsplash.com/photo-1522202195461-9e0f3bda4b54") center/cover no-repeat; */
   height: 200px;
   border-radius: 0 0 20px 20px;
   overflow: hidden;

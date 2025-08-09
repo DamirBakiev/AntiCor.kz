@@ -23,6 +23,7 @@ import Profile from "./Profile";
 
 
 
+
 function App() {
    const [isAuth, setAuth] = useState(() => {
   return localStorage.getItem("isAuthenticated") === "true";
@@ -33,6 +34,8 @@ function App() {
            <LanguageProvider>
             <Router>
                <Header/>
+               
+
                 
                 <Routes>
                 
@@ -43,7 +46,8 @@ function App() {
                     </ProtectedRoute>}/>
                 <Route path="/report" element={<Report />} />
                 <Route path="/login" element={<Login/>}/>
-                <Route path="/logout" element={<Logout/>} />
+
+            <Route path="/logout" element={<Logout setAuth={setAuth} />} />
 
                 <Route path="/home" element={<Home/>}/>
                 

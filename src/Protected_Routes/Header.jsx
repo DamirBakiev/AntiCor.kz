@@ -21,9 +21,11 @@ const Header = () => {
         <Link to="/project">{t("profile")}</Link>
         <Link to="/about">{t("about")}</Link>
         <Link to="/profile">Profile</Link>
+        
         <button onClick={changeLanguage} style={{ marginLeft: "20px", background: "none", border: "none", fontSize: "20px", cursor: "pointer" }}>
           🌐
         </button>
+        
       </nav>
     </header>
   );

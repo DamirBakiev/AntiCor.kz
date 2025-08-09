@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "./LanguageProvider";
 
+
 function Logout({ setAuth }) {
   const navigate = useNavigate();
   const { t } = useLanguage();
@@ -10,8 +11,8 @@ function Logout({ setAuth }) {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    localStorage.setItem("isAuthenticated", "true");
-setAuth(true);
+    localStorage.removeItem("isAuthenticated");
+    setAuth(false);
   }, [setAuth]);
 
   const handleLogin = () => {
@@ -33,30 +34,42 @@ setAuth(true);
     navigate("/register");
   };
 
+  const handleExit = () => {
+    localStorage.clear();
+    setAuth(false);
+    navigate("/logout");
+  };
+
   return (
-    <div className="button_5" style={{}}>
-      <h1 style={{ textAlign: "center" }}>{t("log")}</h1>
-      <input className="input_11"
+    <div className="logout-container">
+      <h1>{t("log")}</h1>
+      <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        style={{ padding: "10px", marginBottom: "10px", width: "100%" }}
       />
-      <input className="input_11"
+      <input
         type="password"
         placeholder={t("password")}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        style={{ padding: "10px", marginBottom: "10px", width: "100%" }}
       />
-      {error && <p style={{ color: "red", marginBottom: "10px" }}>{error}</p>}
-      <button onClick={handleLogin}>{t("login")}</button>
-      <button onClick={handleRegister}>{t("register")}</button>
+      {error && <p className="error">{error}</p>}
+      <button className="btn btn-login" onClick={handleLogin}>
+        {t("login")}
+      </button>
+      <button className="btn btn-register" onClick={handleRegister}>
+        {t("register")}
+      </button>
+      <button className="btn btn-exit" onClick={handleExit}>
+        Выйти
+      </button>
     </div>
   );
 }
 
 export default Logout;
+
 
 
