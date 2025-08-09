@@ -479,6 +479,8 @@ body {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+   font-size: 1rem;
+
 }
 
 .nav-links a {
@@ -813,8 +815,8 @@ textarea {
   min-height: 100vh;
   background: linear-gradient(to right, #e0f7fa, #fff);
   animation: fadeIn 1s ease-in-out;
-   width: 100%; /* теперь на весь экран */
-  
+   max-width: 100%; /* теперь на весь экран */
+  max-height: 100%;
   overflow: hidden;
 }
 
@@ -827,19 +829,23 @@ textarea {
 }
 
 .button_5 button {
-  padding: 15px 30px;
-  margin: 10px;
+  padding: 12px 28px;      /* чуть меньше вертикальный padding, горизонтальный - комфортный */
+  margin: 10px auto;
   border: none;
   border-radius: 30px;
   background-color: #ffffff;
-  color: #ffffff;
+  color: #000000;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
+  display: block;
+  min-width: 160px;        /* минимальная ширина */
+  max-width: 220px;        /* максимальная ширина */
+  width: 100%;             /* чтобы занимать всю ширину контейнера, но с ограничением max-width */
+  box-sizing: border-box;  /* чтобы padding не влиял на ширину */
 }
-
 .button_5 button:hover {
   background-color: #333;
   color: #ffffff;
