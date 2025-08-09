@@ -11,7 +11,6 @@ function Login ({setAuth}) {
    
 
     const handleLogin = () => {
-        setAuth(true)
         navigate("/logout")
     }
 
