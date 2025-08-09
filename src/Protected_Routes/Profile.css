@@ -1,0 +1,157 @@
+.profile-page {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 16px rgba(53, 122, 189, 0.3);
+  color: #fff;
+  text-align: center;
+}
+
+.profile-header-overlay {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  cursor: pointer;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+.profile-name {
+  color: #222;
+  margin-top: 12px;
+}
+
+.profile-email {
+  color: #555;
+  font-size: 14px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: #f0f4f9;
+  padding: 20px;
+  border-radius: 12px;
+  width: 28%;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+  color: #357ABD;
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+.profile-section {
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #357ABD;
+  padding-bottom: 6px;
+  color: #357ABD;
+  user-select: none;
+}
+
+.section-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-item {
+  background: #fafafa;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.item-title {
+  font-weight: 600;
+  font-size: 16px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.toggle-arrow {
+  margin-left: 8px;
+  color: #777;
+}
+
+.item-info {
+  margin-top: 8px;
+  color: #444;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.report-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.report-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  color: #222;
+}
+
+.report-item p {
+  margin-top: 6px;
+  color: #333;
+}
+
+.report-evidence-img {
+  max-width: 150px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  margin-top: 6px;
+}
+
+.report-evidence-link {
+  color: #0066cc;
+  text-decoration: underline;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.no-reports {
+  color: #666;
+  font-style: italic;
+}

@@ -37,7 +37,7 @@ const translations = {
     stok_6:"Укреплялась ответственность должностных лиц за коррупционные действия.",
     bt:"Далее",
 
-    profile: "Профиль",
+     analysis: "Анализ",
      pro_1:"📰 Анализ антикоррупционных дел в Казахстане по регионам",
     pro_2:"Антикоррупционные дела по регионам",
     pro_3:"🔍 Анализ",
@@ -82,6 +82,18 @@ const translations = {
     report_note: "Вы можете анонимно сообщить о коррупции. Пожалуйста, укажите максимум информации.",
     report_submit: "Отправить",
 
+    
+    profile: "Профиль",
+  // name: "Имя",
+  // email: "Почта",
+  cases_solved: "Дел решено",
+  recommendations_count: "Рекомендаций",
+  articles_count: "Статей",
+  my_articles: "Мои статьи",
+  my_recommendations: "Мои рекомендации",
+  no_articles: "Вы пока не добавили статьи",
+  no_recommendations: "Вы пока не добавили рекомендации"
+
 
   },
   kz: {
@@ -122,7 +134,7 @@ const translations = {
     bt:"Келесі",
 
 
-    profile: "Профиль",
+    analysis: "Талдау",
     pro_1:"📰 Қазақстандағы сыбайлас жемқорлыққа қарсы істерді аймақтар бойынша талдау",
     pro_2:"Аймақтар бойынша сыбайлас жемқорлыққа қарсы іс-қимылдар",
     pro_3:"🔍 Талдау",
@@ -166,6 +178,29 @@ const translations = {
       report_title:  "Сыбайлас жемқорлық туралы хабарлау",
     report_note:  "Сіз анонимді түрде сыбайлас жемқорлық туралы хабарлай аласыз.",
     report_submit: "Жіберу",
+
+    
+    profile:  "Профиль",                             
+  
+  
+
+ 
+  
+ 
+   
+  // name: " Аты",
+  // email:  "Пошта",
+  cases_solved: "  Дель резено",
+  recommendations_count:   "Ұсыныс",
+
+  articles_count: " Мүсін",
+  my_articles: 
+  "Менің мақалаларым",
+  my_recommendations:  "Менің ұсыныстары",
+  no_articles:  "Сіз әлі қандай мақалалар қостыңыз",
+  no_recommendations: "Сіз әлі қандай да бір ұсыныстар қостыңыз ба"
+
+
   },
   en: {
     home: "Home",
@@ -203,7 +238,7 @@ const translations = {
     stok_6:"The responsibility of officials for corrupt actions was strengthened.",
     bt:"Next",
     
-    profile: "Profile",
+   analysis: "Analysis",
      pro_1:"📰 Analysis of anti-corruption cases in Kazakhstan by region",
     pro_2:"Anti-corruption cases by region",
     pro_3:"🔍 Analysis",
@@ -247,8 +282,23 @@ const translations = {
     report_title: "Report Corruption",
     report_note: "You can report corruption anonymously. Please provide as much detail as possible.",
     report_submit: "Send",
-    
+
+profile: "Profile",
+// name: "Name",
+// email: "Email",
+cases_solved: "Cases resolved",
+recommendations_count: "Recommendations",
+articles_count: "Articles",
+my_articles: "My articles",
+my_recommendations: "My recommendations",
+no_articles: "You have not added articles yet",
+no_recommendations: "You have not added recommendations yet"
+
   },
+ 
+  
+
+
 
   report_location: { ru: "Где произошло", kz: "Қайда болды", en: "Location" },
 report_description: { ru: "Описание происшествия", kz: "Оқиғаның сипаттамасы", en: "Incident description" },

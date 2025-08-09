@@ -813,7 +813,7 @@ textarea {
   min-height: 100vh;
   background: linear-gradient(to right, #e0f7fa, #fff);
   animation: fadeIn 1s ease-in-out;
-  width: 100vw;
+   width: 100%; /* теперь на весь экран */
   
   overflow: hidden;
 }

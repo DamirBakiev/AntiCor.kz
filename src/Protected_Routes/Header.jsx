@@ -18,9 +18,9 @@ const Header = () => {
         <Link style={{fontSize: "10px"}} to="/report">{t("report_title")}</Link>
         <Link to="/home">{t("home")}</Link>
         <Link to="/dashboard">{t("statistics")}</Link>
-        <Link to="/project">{t("profile")}</Link>
+        <Link to="/project">{t("analysis")}</Link>
         <Link to="/about">{t("about")}</Link>
-        <Link to="/profile">Profile</Link>
+        <Link to="/profile">{t("profile")}</Link>
         
         <button onClick={changeLanguage} style={{ marginLeft: "20px", background: "none", border: "none", fontSize: "20px", cursor: "pointer" }}>
           🌐

@@ -22,6 +22,19 @@ const Report = () => {
     });
   };
 
+  // Сохранение локально
+  const saveReportLocal = (fileDataUrl) => {
+    const myReports = JSON.parse(localStorage.getItem("myReports")) || [];
+    myReports.push({
+      location: report.location,
+      date: report.date,
+      time: report.time,
+      description: report.description,
+      evidence: fileDataUrl,
+    });
+    localStorage.setItem("myReports", JSON.stringify(myReports));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSuccess(false);
@@ -44,6 +57,17 @@ const Report = () => {
 
       if (!response.ok) {
         throw new Error("Failed to submit report");
+      }
+
+      // Сохраняем локально с файлом
+      if (report.evidence) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          saveReportLocal(reader.result);
+        };
+        reader.readAsDataURL(report.evidence);
+      } else {
+        saveReportLocal(null);
       }
 
       setSuccess(true);
@@ -102,30 +126,31 @@ const Report = () => {
           required
         />
 
-      <div className="file-input-container">
-  <input
-    type="file"
-    id="evidence"
-    name="evidence"
-    accept="image/*,video/*,application/pdf"
-    onChange={handleChange}
-    className="file-input"
-  />
-  <label htmlFor="evidence" className="file-input-label">
-    <div className="icon">📁</div>
-    <div className="text">{t("upload_evidence")}</div>
-    <div className="hint">{t("upload_hint")} (JPG, PNG, PDF, MP4)</div>
-  </label>
-  {report.evidence && (
-    <div className="file-name">
-      <span className="file-icon">
-        {report.evidence.type.includes('image') ? '🖼️' : 
-         report.evidence.type.includes('video') ? '🎬' : '📄'}
-      </span>
-      {report.evidence.name}
-    </div>
-  )}
-</div>
+        <div className="file-input-container">
+          <input
+            type="file"
+            id="evidence"
+            name="evidence"
+            accept="image/*,video/*,application/pdf"
+            onChange={handleChange}
+            className="file-input"
+          />
+          <label htmlFor="evidence" className="file-input-label">
+            <div className="icon">📁</div>
+            <div className="text">{t("upload_evidence")}</div>
+            <div className="hint">{t("upload_hint")} (JPG, PNG, PDF, MP4)</div>
+          </label>
+
+          {report.evidence && (
+            <div className="file-name">
+              <span className="file-icon">
+                {report.evidence.type.includes("image") ? "🖼️" :
+                 report.evidence.type.includes("video") ? "🎬" : "📄"}
+              </span>
+              {report.evidence.name}
+            </div>
+          )}
+        </div>
 
         <button type="submit">{t("report_submit")}</button>
       </form>
@@ -134,4 +159,5 @@ const Report = () => {
 };
 
 export default Report;
+
 
