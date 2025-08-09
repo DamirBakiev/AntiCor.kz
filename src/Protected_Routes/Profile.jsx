@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useLanguage } from "./LanguageProvider";
-import "./Profile.css"; 
+// import "./Profile.css"; 
 
 const generateCases = (count) => {
   const cases = [];
