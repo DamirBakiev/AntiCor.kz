@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 import Login from './Login'
 import Dashboard from './Dashboard'
 import ProtectedRoute from "./ProtectedRoute";
@@ -34,9 +35,6 @@ function App() {
            <LanguageProvider>
             <Router>
                <Header/>
-               
-
-                
                 <Routes>
                 
                  <Route path="/" element={<Login setAuth={setAuth}/>}/>
@@ -44,8 +42,8 @@ function App() {
                     <ProtectedRoute isAuth={isAuth}>
                     <Profile/>
                     </ProtectedRoute>}/>
-                <Route path="/report" element={<Report />} />
-                <Route path="/login" element={<Login/>}/>
+                <Route path="/report" element={<Report setAuth={setAuth} />} />
+                <Route path="/login" element={<Login setAuth={setAuth}/>}/>
 
             <Route path="/logout" element={<Logout setAuth={setAuth} />} />
 
@@ -62,7 +60,7 @@ function App() {
                     <About/>
                     </ProtectedRoute>}/>
                      
-                      <Route path="/register" element={<Register/>} />
+                      <Route path="/register" element={<Register setAuth={setAuth} />} />
                       
                      
                       <Route path="/project" element={
