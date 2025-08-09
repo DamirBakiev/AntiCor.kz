@@ -1,0 +1,78 @@
+/* Бүкіл body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #f2f4f7;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Контейнер стилі */
+.app-container {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.app-container:hover {
+  transform: translateY(-4px);
+}
+
+/* Select стилі */
+.language-select {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.language-select:focus {
+  border: 1px solid #6c63ff;
+  outline: none;
+}
+
+/* Тақырып стилі */
+h1 {
+  margin-top: 30px;
+  font-size: 2.4rem;
+  color: #2d2d2d;
+  transition: color 0.3s ease;
+}
+
+/* Label стилі */
+label {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Адаптивтілік */
+@media (max-width: 500px) {
+  .app-container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .language-select {
+    font-size: 0.95rem;
+  }
+}
+
