@@ -430,6 +430,7 @@ nav a:hover::after {
 
 /* Global Styles */
 /* App.css */
+
 /* Основные стили и сброс */
 * {
   margin: 0;
@@ -1249,12 +1250,12 @@ textarea {
 }
 
 .close-btn {
-  position: absolute; 
+  position: absolute; /* фиксируем относительно контейнера */
   top: 6px;
   right: 6px;
   background: transparent;
   border: none;
-  font-size: 14px;
+  font-size: 14px; /* маленькая */
   line-height: 1;
   padding: 2px 5px;
   cursor: pointer;
@@ -1267,6 +1268,7 @@ textarea {
   background: rgba(0,0,0,0.05);
   color: #000;
 }
+
 .restore-btn {
   border: none;
   padding: 5px 10px;
@@ -1381,7 +1383,7 @@ textarea {
 
 .profile-header {
   position: relative;
-  /* background: url("https://images.unsplash.com/photo-1522202195461-9e0f3bda4b54") center/cover no-repeat; */
+  background: url("https://images.unsplash.com/photo-1522202195461-9e0f3bda4b54") center/cover no-repeat;
   height: 200px;
   border-radius: 0 0 20px 20px;
   overflow: hidden;
