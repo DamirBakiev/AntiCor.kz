@@ -42,15 +42,15 @@ function App() {
                     <ProtectedRoute isAuth={isAuth}>
                     <Profile/>
                     </ProtectedRoute>}/>
-                <Route path="/report" element={<Report setAuth={setAuth} />} />
-                <Route path="/login" element={<Login setAuth={setAuth}/>}/>
+                 <Route path="/report" element={<Report setAuth={setAuth} />} />
+                 <Route path="/login" element={<Login setAuth={setAuth}/>}/>
 
-            <Route path="/logout" element={<Logout setAuth={setAuth} />} />
+                 <Route path="/logout" element={<Logout setAuth={setAuth} />} />
 
-                <Route path="/home" element={<Home/>}/>
+                 <Route path="/home" element={<Home/>}/>
                 
 
-                <Route path="/dashboard" element={
+                 <Route path="/dashboard" element={
                     <ProtectedRoute isAuth={isAuth}>
                     <Dashboard/>
                     </ProtectedRoute>}/>
