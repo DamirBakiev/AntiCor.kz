@@ -48,9 +48,9 @@ function Register({ setAuth }) {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", minHeight: "100vh", alignItems: "center", background: "linear-gradient(135deg, #667eea, #764ba2)", padding: "30px" }}>
+    <div style={{ display: "flex", justifyContent: "center", minHeight: "100vh", alignItems: "center", background: "linear-gradient(to right, #e0f7fa, #fff)", padding: "30px" }}>
       <div style={{ background: "#fff", padding: "35px", borderRadius: "16px", maxWidth: "500px", width: "100%" }}>
-        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>{t("registerTitle")}</h2>
+        <h2 style={{ textAlign: "center", marginBottom: "20px", color: 'black' }}>{t("registerTitle")}</h2>
         <form onSubmit={handleSubmit}>
           <input name="name" placeholder="Атыңыз" style={inputStyle} value={formData.name || ""} onChange={handleChange} />
           {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}

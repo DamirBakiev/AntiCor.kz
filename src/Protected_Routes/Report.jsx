@@ -22,7 +22,7 @@ const Report = () => {
     });
   };
 
-  // Сохранение локально
+  // Сохранение отчета в LocalStorage с файлом
   const saveReportLocal = (fileDataUrl) => {
     const myReports = JSON.parse(localStorage.getItem("myReports")) || [];
     myReports.push({
@@ -40,47 +40,52 @@ const Report = () => {
     setSuccess(false);
     setError("");
 
-    const formData = new FormData();
-    formData.append("location", report.location);
-    formData.append("date", report.date);
-    formData.append("time", report.time);
-    formData.append("description", report.description);
+    const sendData = async (fileBase64) => {
+      const payload = {
+        location: report.location,
+        date: report.date,
+        time: report.time,
+        description: report.description,
+        evidence: fileBase64 || null,
+      };
+
+      try {
+        const response = await fetch(
+          "https://68578f8c21f5d3463e557f11.mockapi.io/Users/respot",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        if (!response.ok) throw new Error("Failed to submit report");
+
+        saveReportLocal(fileBase64);
+        setSuccess(true);
+        setReport({
+          location: "",
+          date: "",
+          time: "",
+          description: "",
+          evidence: null,
+        });
+      } catch (err) {
+        console.error(err);
+        setError(t("report_error") || "Something went wrong");
+      }
+    };
+
     if (report.evidence) {
-      formData.append("evidence", report.evidence);
-    }
-
-    try {
-      const response = await fetch("https://68578f8c21f5d3463e557f11.mockapi.io/Users/respot", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit report");
-      }
-
-      // Сохраняем локально с файлом
-      if (report.evidence) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          saveReportLocal(reader.result);
-        };
-        reader.readAsDataURL(report.evidence);
-      } else {
-        saveReportLocal(null);
-      }
-
-      setSuccess(true);
-      setReport({
-        location: "",
-        date: "",
-        time: "",
-        description: "",
-        evidence: null,
-      });
-    } catch (err) {
-      console.error(err);
-      setError(t("report_error") || "Something went wrong");
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        sendData(reader.result);
+      };
+      reader.readAsDataURL(report.evidence);
+    } else {
+      sendData(null);
     }
   };
 
@@ -144,8 +149,11 @@ const Report = () => {
           {report.evidence && (
             <div className="file-name">
               <span className="file-icon">
-                {report.evidence.type.includes("image") ? "🖼️" :
-                 report.evidence.type.includes("video") ? "🎬" : "📄"}
+                {report.evidence.type.includes("image")
+                  ? "🖼️"
+                  : report.evidence.type.includes("video")
+                  ? "🎬"
+                  : "📄"}
               </span>
               {report.evidence.name}
             </div>
@@ -159,5 +167,3 @@ const Report = () => {
 };
 
 export default Report;
-
-
