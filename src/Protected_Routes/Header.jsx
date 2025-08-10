@@ -1,12 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useLanguage } from './LanguageProvider';
+import './Sistem.css'
 
 
 const Header = () => {
   const { changeLanguage, t } = useLanguage();
+
+   const navigate = useNavigate();
+
+    const handleLogout = () => {
   
-  
+   localStorage.removeItem('user');
+    localStorage.removeItem('isAuthenticated');
+    navigate('/login');
+    }
 
   return (
     <header className="header">
@@ -22,11 +30,19 @@ const Header = () => {
         <Link to="/about">{t("about")}</Link>
         <Link to="/profile">{t("profile")}</Link>
         
-        <button onClick={changeLanguage} style={{ marginLeft: "20px", background: "none", border: "none", fontSize: "20px", cursor: "pointer" }}>
+        <button onClick={changeLanguage} style={{width: "7%", marginLeft: "20px", background: "none", border: "none", fontSize: "20px", cursor: "pointer", textAlign: "center" }}>
           🌐
         </button>
-        
+         <button onClick={handleLogout} className="logout-btn">
+        Выйти
+      </button>
       </nav>
+     
+      
+      
+      
+       
+
     </header>
   );
 };
